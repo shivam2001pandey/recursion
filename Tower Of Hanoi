@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+vector<pair<int,int> >v;
+
+void TOH(int n,int a,int b,int c)
+{
+    if(n>0)
+    {
+        TOH(n-1,a,c,b);
+        v.push_back(make_pair(a,c));
+        TOH(n-1,b,a,c);
+    }
+}
+int main()
+ {
+	//code
+	int t;  cin>>t;
+	while(t--)
+	{   v.clear();
+	    int n,p;
+	    cin>>n>>p;
+	    
+	    TOH(n,1,2,3);
+	    cout<<v[p-1].first<<" "<<v[p-1].second;
+	    cout<<endl;
+	}
+	return 0;
+}
