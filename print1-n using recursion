@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void recur(int n,int count)
+{
+    if(count==n+1) return;
+    cout<<count<<" ";
+    recur(n,count+1);
+}
+int main() {
+	//code
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    recur(n,1);
+	    cout<<endl;
+	}
+	return 0;
+}
