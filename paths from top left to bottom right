@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void solveutil(int x,int y,int m,int n,int &count)
+{
+    if(x==m-1 && y==n-1) {
+        count++;return;
+    }
+    if(x==m || y==n) return;
+    solveutil(x+1,y,m,n,count);
+    solveutil(x,y+1,m,n,count);
+    
+}
+
+void solve(int x,int y,int m,int n,int &count)
+{
+    solveutil(x,y,m,n,count);
+}
+
+int main()
+ {
+	//code
+	int t;  cin>>t;
+	while(t--)
+	{
+	    int m,n;
+	    cin>>m>>n;
+	    int count=0;
+	    solve(0,0,m,n,count);
+	    cout<<count<<endl;
+	}
+	return 0;
+}
