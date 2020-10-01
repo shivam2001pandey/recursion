@@ -2,7 +2,7 @@
 using namespace std;
 void reverse(string str)
 {
-    if(str.size()==0)
+    if(str.empty()) 
         return;
      reverse(str.substr(1));
      cout<<str[0];   
@@ -10,7 +10,7 @@ void reverse(string str)
 int main()
 {
     string str;
-    getline(cin,str);
+    cout<<str;
     reverse(str);
     return 0;
 }
